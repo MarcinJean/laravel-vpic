@@ -3,6 +3,7 @@
     "description": "Laravel package for VIN decoding via NHTSA vPic API",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/MarcinJean/laravel-vpic",
     "authors": [
         {
             "name": "Marcin Jean",
@@ -11,15 +12,17 @@
     ],
     "require": {
         "php": "^8.0",
-        "guzzlehttp/guzzle": "^7.0",
-        "illuminate/support": "^10.0",
-        "illuminate/database": "^10.0"
+        "guzzlehttp/guzzle": ">=7.0",
+        "illuminate/support": ">=10.0",
+        "illuminate/database": ">=10.0"
     },
     "autoload": {
         "psr-4": {
             "MarcinJean\\LaravelVPic\\": "src/"
         }
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": ["MarcinJean\\LaravelVPic\\VPicServiceProvider"],
