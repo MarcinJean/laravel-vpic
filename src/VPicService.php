@@ -48,6 +48,21 @@ class VPicService
     }
 
     /**
+     * Retrieve and clean up all makes from vPic.
+     *
+     * @return array<int,string> Keyed by Make_ID => Make_Name
+     */
+    public function allMakes(): array
+    {
+        $data = $this->callApi('getallmakes');
+        return collect($data)
+            ->mapWithKeys(fn($item) => [
+                (int)$item['Make_ID'] => $item['Make_Name']
+            ])
+            ->toArray();
+    }
+
+    /**
      * Unified API caller with error handling.
      *
      * @param string $endpoint
